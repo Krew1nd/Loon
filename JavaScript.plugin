@@ -1,5 +1,5 @@
 [MITM]
-hostname = wmapi.meituan.com,*.uve.weibo.com,mapi.weibo.com,api.weibo.cn,*.amemv.com,api.m.jd.com,weixin110.qq.com,mp.weixin.qq.com,account.wps.cn,baimiao.uzero.cn,pan.baidu.com
+hostname = wmapi.meituan.com,*.uve.weibo.com,mapi.weibo.com,api.weibo.cn,-*.amemv.com,api.m.jd.com,weixin110.qq.com,mp.weixin.qq.com,account.wps.cn,baimiao.uzero.cn,pan.baidu.com
 
 [Script]
 http-response ^https?:\/\/wmapi\.meituan\.com\/api\/v\d+\/loadInfo? script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/startup/startup.js, requires-body=true, timeout=10, tag=美团开屏广告
@@ -10,7 +10,7 @@ http-response ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positiv
 
 http-request ^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js, requires-body=true, timeout=10, tag=微博广告
 
-http-request ^https?:\/\/.*\.amemv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list)\/ script-path=https://raw.githubusercontent.com/zwf234/rules/master/js/douyin.js, requires-body=true, timeout=10, tag=抖音广告
+#http-request ^https?:\/\/.*\.amemv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list)\/ script-path=https://raw.githubusercontent.com/zwf234/rules/master/js/douyin.js, requires-body=true, timeout=10, tag=抖音广告
 
 http-response ^https?:\/\/weixin110\.qq\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi script-path=https://raw.githubusercontent.com/HotKids/Rules/master/Script/weixin110.js, requires-body=true, timeout=10, tag=微信屏蔽链接跳转
 
